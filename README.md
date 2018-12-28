@@ -2,7 +2,7 @@
 
 This repository contains pytorch code that produces the local minma finding algorithm in the paper: [Third-order Smoothness Helps: Faster Stochastic Optimization Algorithms for Finding Local Minima](http://papers.nips.cc/paper/7704-third-order-smoothness-helps-faster-stochastic-optimization-algorithms-for-finding-local-minima.pdf).
 
-We perform experiments of training a deep autoencoder on MNIST dataset, where the autoencoder is composed of a fully connected encoder with layers of size (28 ⇥ 28)-1024-512-256-32 and a symmetric decoder.
+We perform experiments of training a deep autoencoder on MNIST dataset, where the autoencoder is composed of a fully connected encoder with layers of size (28 x 28)-1024-512-256-32 and a symmetric decoder.
 
 ## Prerequisites:
 * Python (3.6.4)
