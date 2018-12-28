@@ -51,7 +51,7 @@ class AutoEncoder(nn.Module):
         """
         Function to compute the large-batch loss and the large-batch gradient
         args : dataset, loss function, number of samples to be calculated
-        return : total loss and full grad norm
+        return : total_loss, full_grad_norm
         """
 
         total_loss = 0.0

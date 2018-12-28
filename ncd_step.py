@@ -7,13 +7,13 @@ import numpy as np
 def ncd3_step(net, optimizer, train_loader_power, loss_function, args):
     """
     Function to take the negative curvature step
-    args : net, train loader, loss function, number of iterations, learning rate
+    args : net, optimizer, train loader for power method, loss function, args
            lambda (parameter for pca), lr_scsg, lr_ncd3
     return : estimate_value, i.e., v^{\top}*H*v
     """
     # print('Calculating Negative Curvature')
 
-    n_iter = args.POWER_ITER
+    n_iter = args.PCA_ITER
     lr_pca = args.LR_PCA
     lambda_pca = args.LAMBDA_PCA
     lr_scsg = args.LR_SCSG

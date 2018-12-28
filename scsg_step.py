@@ -5,8 +5,8 @@ from torch.autograd import Variable
 def scsg_step(net, optimizer, train_loader, test_loader, loss_function, inner_iter_num, args):
     """
     Function to updated weights with a SCSG backpropagation
-    args : train_loader, test_loader, loss function, number of epochs,
-    return : total_loss_epoch, grad_norm_epoch
+    args : net, optimizer, train_loader, test_loader, loss function, number of inner epochs, args
+    return : train_loss, test_loss, grad_norm_lb
     """
     # record previous net full gradient
     pre_net_full = copy.deepcopy(net)

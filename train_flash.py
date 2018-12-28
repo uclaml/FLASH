@@ -8,27 +8,28 @@ from scsg_step import *
 from ncd_step import *
 from model import *
 
+
 # Training settings
 parser = argparse.ArgumentParser(description='FLASH Example')
 
 parser.add_argument('--BATCH-SIZE', type=int, default=100, metavar='N',
-                    help='batch size for Adam in training (default: 100)')
+                    help='mini batch size for scsg in training (default: 100)')
 parser.add_argument('--BATCH-SIZE-POWER', type=int, default=10, metavar='N',
                     help='batch size for power method in training (default: 10)')
 parser.add_argument('--LARGE-BATCH-NUMBER', type=int, default=25, metavar='N',
-                    help='subsample size (how many mini-batch) for tracking gradient norm (default: 10)')
+                    help='how many mini-batch for calculate large batch gradient (default: 25)')
 parser.add_argument('--LR-SCSG', type=float, default=0.6, metavar='LR',
-                    help='learning rate for Adam (default: 0.001)')
+                    help='learning rate for scsg (default: 0.6)')
 parser.add_argument('--LR-PCA', type=float, default=0.5, metavar='LR',
-                    help='learning rate for power method (default: 0.5)')
+                    help='learning rate for pca (default: 0.5)')
 parser.add_argument('--LR-NEG', type=float, default=0.05, metavar='L',
-                    help='step size for negative curvature descent (default: 0.5)')
+                    help='learning rate for negative curvature descent (default: 0.05)')
 parser.add_argument('--NORM-THRESHOLD', type=float, default=0.002, metavar='LR',
-                    help='threshold for gradient norm (default: 0.001)')
+                    help='threshold for gradient norm (default: 0.002)')
 parser.add_argument('--EPOCH', type=int, default=500, metavar='LR',
-                    help='total epoch (data pass) for the algorithm (default: 100)')
-parser.add_argument('--POWER-ITER', type=int, default=100, metavar='N',
-                    help='inner iteration for power method (default: 20)')
+                    help='total epoch (data pass) for the algorithm (default: 500)')
+parser.add_argument('--PCA-ITER', type=int, default=100, metavar='N',
+                    help='iteration for PCA (default: 100)')
 parser.add_argument('--LAMBDA-PCA', type=float, default=5.0, metavar='L',
                     help='normalization term for power method (default: 5.0)')
 args = parser.parse_args()
